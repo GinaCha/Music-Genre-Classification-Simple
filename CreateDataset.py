@@ -46,7 +46,7 @@ def main():
     dataset_pandas = pandas.DataFrame(dataset_numpy, columns=Feature_Names)
 
     dataset_pandas["genre"] = labels
-    dataset_pandas.to_csv("dataset.csv", index=False)
+    dataset_pandas.to_csv("data/dataset.csv", index=False)
     print("Data set has been created and sent to the project folder!")
 
 def get_subdirectories(a_dir):
