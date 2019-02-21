@@ -4,7 +4,7 @@ import os
 GENRE_DIR = "../data/genres"
 
 # Directory where the test music is located
-TEST_DIR = "../wav model/data/genre-test"
+TEST_DIR = "../wav model/data/genres"
 
 # All the available genres
 GENRE_LIST = [ "blues","classical","country","disco","hiphop","jazz","metal","pop","reggae","rock"]
