@@ -11,14 +11,23 @@ from sklearn.model_selection import ShuffleSplit
 from sklearn.linear_model.logistic import LogisticRegression
 from sklearn.metrics import confusion_matrix
 from sklearn.externals import joblib
-from utils1 import GENRE_DIR, GENRE_LIST
+from utils1 import GENRE_DIR, GENRE_LIST,TEST_DIR
 import scipy
 import scipy.io.wavfile
+
+# from utils import plot_roc, plot_confusion_matrix, GENRE_DIR, GENRE_LIST, TEST_DIR
+
+# from ceps import read_ceps, create_ceps_test, read_ceps_test
+
+from pydub import AudioSegment
 
 genre_list = GENRE_LIST
 
 clf = None
 
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#          Please run the classifier script first
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 def create_fft(wavfile):
     sample_rate, song_array = scipy.io.wavfile.read(wavfile)
     fft_features = abs(scipy.fft(song_array[:30000]))
@@ -129,7 +138,7 @@ if __name__ == "__main__":
         break
 
 
-    test_file = "./data/genres/disco/disco.00010.wav"
+    test_file = TEST_DIR + "/disco/disco.00010.wav"
     # nsamples, nx, ny = test_file.shape
     # test_file = test_file.reshape((nsamples,nx*ny))
     # should predict genre as "ROCK"
